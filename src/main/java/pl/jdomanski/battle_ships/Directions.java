@@ -1,4 +1,4 @@
-package pl.jdomanski.bgames;
+package pl.jdomanski.battle_ships;
 
 public enum Directions {
 	N (new Vector( 0, 1)),
@@ -8,7 +8,8 @@ public enum Directions {
 	S (new Vector( 0,-1)),
 	SW(new Vector(-1,-1)),
 	W (new Vector(-1, 0)),
-	NW(new Vector(-1, 1));
+	NW(new Vector(-1, 1)),
+	;
 	
 	private Vector vector;
 	

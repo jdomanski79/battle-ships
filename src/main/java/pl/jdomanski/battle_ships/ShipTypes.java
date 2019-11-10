@@ -1,4 +1,4 @@
-package pl.jdomanski.bgames.ships;
+package pl.jdomanski.battle_ships;
 
 public enum ShipTypes {
     CARRIER("Carrier",5),

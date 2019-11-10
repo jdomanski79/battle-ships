@@ -1,4 +1,4 @@
-package pl.jdomanski.bgames;
+package pl.jdomanski.battle_ships;
 
 public class Vector {
 
@@ -19,7 +19,16 @@ public class Vector {
 	}
 	
 	// == public methods ==
-	public Vector plus(Vector vector) {
+	public void plus(Vector vector) {
+		this.x = vector.getX() + this.x;
+		this.y = vector.getY() + this.y;
+	}
+	
+	public Vector copyOf() {
+		return new Vector(this.getX(), this.getY());
+	}
+	
+	public Vector add (Vector vector) {
 		return new Vector(vector.getX() + this.x, vector.getY() + this.y);
 	}
 	
