@@ -36,7 +36,16 @@ public class ShipsBoard {
 		this.getCell(vector).setHitted(true);
 
 	}
+	
+	public Vector getRandomValidVector() {
+		Random random = new Random();
+		
+		int randomInt = random.nextInt(getAvailableMoves().size());
+		
+		return getAvailableMoves().get(randomInt);
 
+	}
+	
 	public ArrayList<Vector> getAvailableMoves() {
 
 		ArrayList<Vector> list = new ArrayList<Vector>();
