@@ -1,4 +1,6 @@
-package pl.jdomanski.battle_ships;
+package pl.jdomanski.battle_ships.player;
+
+import pl.jdomanski.battle_ships.ShipsBoard;
 
 public class Player {
 
@@ -44,5 +46,9 @@ public class Player {
 
 	public void setEnemyBoard(ShipsBoard enemyBoard) {
 		this.enemyBoard = enemyBoard;
+	}
+	
+	public void shoot() {
+		
 	}
 }
