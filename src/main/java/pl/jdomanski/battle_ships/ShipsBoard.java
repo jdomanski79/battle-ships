@@ -32,9 +32,20 @@ public class ShipsBoard {
 		return isInBoard(vector) && this.getCell(vector).isNotHitted();
 	}
 
-	public void submitMove(Vector vector, String mark) {
-		this.getCell(vector).setHitted(true);
-
+	public Message shootAt(Vector vector) {
+		Cell aimedCell = getCell(vector);
+		
+		aimedCell.setHitted(true);
+		
+		if (aimedCell.isShip())
+			if (aimedCell.getShip().isSunk()) {
+				return Message.SUNK;
+			}
+			else {
+				return Message.HIT;
+			}
+		
+		return Message.MISSED;
 	}
 	
 	public Vector getRandomValidVector() {
@@ -90,8 +101,7 @@ public class ShipsBoard {
 			Directions[] mainDirections = {Directions.N, Directions.S, Directions.E, Directions.W};
 			
 			do {
-				int randomInt = random.nextInt(getAvailableMoves().size());
-				randomVector = getAvailableMoves().get(randomInt);
+				randomVector = getRandomValidVector();
 							
 				randomDirection = mainDirections[random.nextInt(mainDirections.length)];	
 			} 
