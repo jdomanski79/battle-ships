@@ -160,7 +160,17 @@ public class ShipsBoard {
 		}
 		return true;
 	}
-
+	
+	public Cell getCellForEnemy(Vector vector) {
+		Cell cell = getCell(vector);
+		
+		if (cell.isHitted()) { 
+			return cell;
+		} else {
+			return null;
+		}
+		
+	}
 	private Cell getCell(Vector vector) {
 		return grid[vector.getX() + vector.getY() * WIDTH];
 	}
